@@ -1,0 +1,15 @@
+version: 2.1
+jobs:
+  expr_calc:
+    docker:
+      - image: cimg/base:current
+    steps:
+      - run:
+          name: expr
+          command: |
+            r=$((5 * 7))
+            echo "5 * 7 = $r"
+workflows:
+  main:
+    jobs:
+      - expr_calc
